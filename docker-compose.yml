@@ -1,0 +1,20 @@
+services:
+  dw_postgres_local:
+    image: postgres:17rc1-alpine3.19
+    container_name: dw_local
+    ports:
+      - "5447:5432"
+    restart: unless-stopped
+    env_file: ./.env
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    networks:
+      - networks_prj_feegow
+
+volumes:
+  postgres-volume:
+
+networks:
+  networks_prj_feegow:
+    name: networks_prj_feegow
+    driver: bridge
