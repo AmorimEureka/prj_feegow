@@ -1,17 +1,16 @@
-[project]
+[tool.poetry]
 name = "prj-feegow"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "rafael.amorim",email = "raffaekk@gmail.com"}
-]
+authors = ["rafael.amorim <raffaekk@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "google-cloud-bigquery (==3.11.0)",
-    "google-cloud-bigquery-storage (>=2.34.0,<3.0.0)",
-    "dlt (>=1.18.2,<2.0.0) ; python_full_version >= \"1.18.2\" and python_full_version < \"2.0.0\""
-]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.15"
+dlt = ">=1.18.2,<2.0.0"
+psycopg2-binary = "^2.9.11"
+dbt = "^1.0.0.40.10"
 
 
 [build-system]
