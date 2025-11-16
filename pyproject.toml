@@ -11,6 +11,8 @@ python = ">=3.12,<3.15"
 dlt = ">=1.18.2,<2.0.0"
 psycopg2-binary = "^2.9.11"
 dbt = "^1.0.0.40.10"
+dotenv = "^0.9.9"
+python-dateutil = "^2.9.0.post0"
 
 
 [build-system]
