@@ -1,5 +1,5 @@
 import dlt
-from source_feegow import feegow_source
+from prj_dlt_feegow.source_feegow import feegow_source
 from datetime import datetime, timedelta
 from typing import Any
 
@@ -72,7 +72,6 @@ def pipeline_run():
                 pipeline.run(
                     feegow_source(primeira_data=p_dt_inicial, p_dias_futuro=dias, write_disposition=modo_escrita)
                     )
-
 
 
 if __name__ == "__main__":
