@@ -16,12 +16,12 @@ def feegow_source(
 ):
 
     data_comeco = datetime.strptime(primeira_data, "%Y-%m-%d")
-    data_end = data_comeco + timedelta(days=p_dias_futuro)
+    data_fim = data_comeco + timedelta(days=p_dias_futuro)
 
     dt_inicial = primeira_data
-    dt_final = data_end.strftime("%Y-%m-%d")
+    dt_final = data_fim.strftime("%Y-%m-%d")
 
-    # OBTER TOKEN DA API FEEGOW
+    # OBTENHO TOKEN DA API FEEGOW
     if feegow_token is None:
         feegow_token = os.getenv("feegow_token")
         if not feegow_token:
@@ -49,7 +49,7 @@ def feegow_source(
             {
                 "name": "agendamentos",
                 "write_disposition": write_disposition,
-                "primary_key": "agendamento_id" if write_disposition == "merge" else None,
+                "primary_key": "agendamento_id",
                 "endpoint": {
                     "path": "appoints/search",
                     "params": {
