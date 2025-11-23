@@ -2,3 +2,4 @@
 .venv
 secrets.toml
 rest_api_pipeline.py
+airflow_settings.yaml
